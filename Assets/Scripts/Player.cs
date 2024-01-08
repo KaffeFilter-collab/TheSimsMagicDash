@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,13 +9,13 @@ public class Player: MonoBehaviour
     public InputActionReference move;
     public InputActionReference dash;
     public float speed = 0;
-    public Vector2 input;
+    public Vector3 input;
     public int HP;
     public int Mana;
     public bool invicibilityframes = false;
     private bool candash = true;
-    private float dashingstrenght = 3;
-    private float dashtime = 1;
+    [SerializeField] float dashingstrenght = 5f;
+    
     
 
     private void OnEnable()
@@ -40,7 +41,7 @@ public class Player: MonoBehaviour
         print("Hallo");
         if (candash == true) 
         {
-            StartCoroutine(DashRoutine());
+            StartCoroutine(DashRoutine(input));
         }
 
        
@@ -67,12 +68,17 @@ public class Player: MonoBehaviour
         rigidbody2d.velocity = input * speed;
     } 
 
-    IEnumerator DashRoutine()
+    IEnumerator DashRoutine(Vector2 direction)
     {
         candash = false;
         invicibilityframes = true;
-        rigidbody2d.velocity = new Vector2(transform.localScale.x *dashingstrenght, 0f);
-        yield return  new WaitForSeconds(dashtime);
+        rigidbody2d.MovePosition(transform.position + input*dashingstrenght);
+        yield return null;            
+        rigidbody2d.velocity= new Vector2(0f,0f);
+        candash=true;
+        invicibilityframes=false;
+        print("aftercorutine");
+
     }
     
 }
