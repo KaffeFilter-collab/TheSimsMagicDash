@@ -48,8 +48,7 @@ public class Player : MonoBehaviour
     {
         print("Hallo");
         if (candash == true)
-        {
-            
+        {            
             StartCoroutine(DashRoutine(input));
         }
 

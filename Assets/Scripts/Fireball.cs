@@ -31,6 +31,7 @@ public class Fireball : MonoBehaviour
         
         if (transform.parent != null)
         {
+
             print(diffrence);
         }
     }
