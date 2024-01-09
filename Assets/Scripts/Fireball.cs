@@ -44,4 +44,12 @@ public class Fireball : MonoBehaviour
             print("bla bla");
         }
     }
+      public void OnTriggerEnter2D(Collider2D collision) 
+      {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+        print("hi");
+        
+        }
+    }
 }
