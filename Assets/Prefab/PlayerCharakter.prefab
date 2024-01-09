@@ -103,11 +103,11 @@ MonoBehaviour:
   castspell1: {fileID: -7279058703300587421, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
   castspell2: {fileID: -2755900901849756038, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
   speed: 3
-  input: {x: 0, y: 0, z: 0}
   HP: 0
   Mana: 0
   invicibilityframes: 0
   dashingstrenght: 5
+  dashspeed: 5
 --- !u!50 &1602275199269005029
 Rigidbody2D:
   serializedVersion: 4

@@ -1,24 +1,28 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player: MonoBehaviour
+public class Player : MonoBehaviour
 {
+
+    [SerializeField] public float wait;
     Rigidbody2D rigidbody2d;
     public InputActionReference move;
     public InputActionReference dash;
     public InputActionReference castspell1;
     public InputActionReference castspell2;
     [SerializeField] public float speed = 0;
-    public Vector3 input;
+    private Vector3 input;
     [SerializeField] public int HP;
     [SerializeField] public int Mana;
-    public bool invicibilityframes = false;
+    private bool Invinicibilityframes = false;
     private bool candash = true;
     [SerializeField] float dashingstrenght = 5f;
-    
-    
+    [SerializeField] float dashspeed = 5f;
+
 
     private void OnEnable()
     {
@@ -50,12 +54,13 @@ public class Player: MonoBehaviour
     void Dash(InputAction.CallbackContext ctx)
     {
         print("Hallo");
-        if (candash == true) 
+        if (candash == true)
         {
+            
             StartCoroutine(DashRoutine(input));
         }
 
-       
+
     }
 
     void StopMovement(InputAction.CallbackContext ctx)
@@ -67,7 +72,7 @@ public class Player: MonoBehaviour
     {
         input = ctx.ReadValue<Vector2>();
     }
-   void SpellCast1(InputAction.CallbackContext ctx)
+    void SpellCast1(InputAction.CallbackContext ctx)
     {
         print("spell1");
     }
@@ -84,20 +89,33 @@ public class Player: MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody2d.velocity = input * speed;
-    } 
+        if (candash == true)
+        {
+            rigidbody2d.velocity = input * speed;
+        }
+    }
 
     IEnumerator DashRoutine(Vector2 direction)
     {
-        candash = false;
-        invicibilityframes = true;
-        rigidbody2d.MovePosition(transform.position + input*dashingstrenght);
-        yield return null;            
-        rigidbody2d.velocity= new Vector2(0f,0f);
-        candash=true;
-        invicibilityframes=false;
-        print("aftercorutine");
 
+        candash = false;
+        Invinicibilityframes = true;
+        while (candash == false) {
+            rigidbody2d.velocity = input * dashspeed;
+            dashspeed = dashspeed * dashingstrenght;
+            print(dashspeed);
+            gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+            if (dashspeed <= speed) candash = true;
+            yield return new WaitForSeconds(wait);
+
+        }
+        gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0);
+        rigidbody2d.velocity = new Vector2(0f, 0f);
+        Invinicibilityframes = false;
+        
+        dashspeed = 10;
+        print(dashspeed);
+        yield return null;
     }
-    
+
 }
