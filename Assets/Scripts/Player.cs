@@ -44,6 +44,17 @@ public class Player : MonoBehaviour
         dash.action.Disable();  
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("debugcollisionworks");
+        if(collision.gameObject.CompareTag("BeeAOE"))
+        {
+            print("HP");
+            HP--;
+        }
+    }
+
+
     void Dash(InputAction.CallbackContext ctx)
     {
         print("Hallo");
