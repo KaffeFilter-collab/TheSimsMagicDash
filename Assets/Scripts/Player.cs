@@ -7,15 +7,22 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-
+    //Sprites
+    public SpriteRenderer spriteRenderer;
+    public Sprite walking1;
+    public Sprite walking2;
+    
     [SerializeField] public float wait;
     Rigidbody2D rigidbody2d;
+    //Movment
     public InputActionReference move;
     public InputActionReference dash;
     public InputActionReference playermelee;
+    private bool ismoving;
    
     [SerializeField] public float speed = 0;
     private Vector3 input;
+    //BasicStats
     [SerializeField] public int HP;
     [SerializeField] public int Mana;
     private bool Invinicibilityframes = false;
@@ -79,16 +86,19 @@ public class Player : MonoBehaviour
     void StopMovement(InputAction.CallbackContext ctx)
     {
         input = Vector2.zero;
+        ismoving = false;
     }
 
     void SetInput(InputAction.CallbackContext ctx)
     {
         input = ctx.ReadValue<Vector2>();
+        ismoving = true;
     }
    
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
@@ -98,6 +108,13 @@ public class Player : MonoBehaviour
         if (candash == true)
         {
             rigidbody2d.velocity = input * speed;
+            
+            if(ismoving==true)
+            {    
+            StartCoroutine(Walkanimationcycle());
+            }
+            
+
         }
     }
 
@@ -110,12 +127,11 @@ public class Player : MonoBehaviour
             rigidbody2d.velocity = input * dashspeed;
             dashspeed = dashspeed * dashingstrenght;
             print(dashspeed);
-            gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0);
             if (dashspeed <= speed) candash = true;
             yield return new WaitForSeconds(wait);
 
         }
-        gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0);
+       
         rigidbody2d.velocity = new Vector2(0f, 0f);
         Invinicibilityframes = false;
         
@@ -124,4 +140,13 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator Walkanimationcycle()
+    {
+        while (ismoving==true)
+        {     
+        spriteRenderer.sprite = walking1; 
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.sprite = walking2; 
+        }
+    }
 }
