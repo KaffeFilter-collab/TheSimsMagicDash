@@ -24,7 +24,7 @@ public class Grid
         {
             for (int y = 0;y< gridArray.GetLength(1);y++)
             {
-                CreateWorldText(parent,gridArray[x, y].ToString(),position(x, y),5, Color.white, TextAnchor.MiddleCenter,TextAlignment.Center,1);
+                CreateWorldText(parent,gridArray[x, y].ToString(),position(x, y)+ new Vector3(CellSize,CellSize)*.5f,5, Color.white, TextAnchor.MiddleCenter,TextAlignment.Center,1);
                 
                 Debug.DrawLine(position(x, y),position(x,y+1),Color.white, 100f);
                 Debug.DrawLine(position(x, y), position(x+1, y),Color.white,100f);

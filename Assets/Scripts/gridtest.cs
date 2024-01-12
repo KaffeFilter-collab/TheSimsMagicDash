@@ -1,19 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class gridtest : MonoBehaviour
 {
-    new Vector3 mousePosition;
-    void Start()
+    public InputActionReference Griddebugging;
+    private Grid grid;
+    new Vector2 mousePosition;
+    private new Vector3 mousepositionchanger;
+
+    private void OnEnable()
     {
-        Grid grid = new Grid(20, 10,10f,transform);
+        Griddebugging.action.Enable();
+        Griddebugging.action.performed += griddebugginh;
     }
 
-   //public void MousePosition() 
-    //{
-      //  mousePosition = mainCam.ScreenToWorldPoint(Mouse.current.position);
-    //}
+    private void OnDisable()
+    {
+        Griddebugging.action.Disable();
+        Griddebugging.action.performed -= griddebugginh;
+    }
+
+
+
+
+    void griddebugginh(InputAction.CallbackContext ctx)
+    {
+        print("mouseinputisworking");
+        mousepositionchanger = mousePosition;
+        grid.SetValue(mousepositionchanger,56);
+    }
+
+    void Start()
+    {
+        
+        grid = new Grid(20, 10,10f,transform);
+    }
+
+
+    private void Update()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        
+    }
+    
 
 }

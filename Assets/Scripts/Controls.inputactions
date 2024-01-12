@@ -42,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseInput",
+                    "name": "Griddebugging",
                     "type": "Button",
-                    "id": "a0c6cd23-a309-45be-a669-48ca39750e43",
+                    "id": "32552bbe-b627-425c-acf9-d7753a40b3e3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -285,12 +285,12 @@
                 },
                 {
                     "name": "",
-                    "id": "5f949f02-0ba8-4b0d-a736-eabf4354cece",
-                    "path": "",
+                    "id": "4fa89d4f-af5a-4080-8226-abbd5d456ed2",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseInput",
+                    "action": "Griddebugging",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
