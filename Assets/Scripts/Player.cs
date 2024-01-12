@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidbody2d;
     public InputActionReference move;
     public InputActionReference dash;
+    public InputActionReference playermelee;
    
     [SerializeField] public float speed = 0;
     private Vector3 input;
@@ -25,23 +26,27 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        playermelee.action.Enable();
         move.action.Enable();
         dash.action.Enable();
         move.action.performed += SetInput;
         move.action.canceled += StopMovement;
         dash.action.performed += Dash;
-       
+        playermelee.action.performed += PlayerMelee;
+
 
     }
 
     private void OnDisable()
     {
+        playermelee.action.performed -= PlayerMelee;
         move.action.canceled -= StopMovement;
         dash.action.performed -= Dash;
         move.action.performed -= SetInput;
         move.action.Disable();
         dash.action.Disable();  
+        playermelee.action.Disable();
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +59,11 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    void PlayerMelee(InputAction.CallbackContext ctw)
+    {
+        print("Mele");
+    }
 
     void Dash(InputAction.CallbackContext ctx)
     {

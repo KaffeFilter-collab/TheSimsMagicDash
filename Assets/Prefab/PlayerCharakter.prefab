@@ -101,6 +101,7 @@ MonoBehaviour:
   wait: 0.08
   move: {fileID: -5954798466029011530, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
   dash: {fileID: 8266486012412621286, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
+  playermelee: {fileID: 5768555492690683345, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
   speed: 3.5
   HP: 0
   Mana: 0
