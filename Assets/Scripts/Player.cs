@@ -7,18 +7,12 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    //Sprites
-    public SpriteRenderer spriteRenderer;
-    public Sprite walking1;
-    public Sprite walking2;
-    
     [SerializeField] public float wait;
     Rigidbody2D rigidbody2d;
     //Movment
     public InputActionReference move;
     public InputActionReference dash;
-    public InputActionReference playermelee;
-    private bool ismoving;
+   
    
     [SerializeField] public float speed = 0;
     private Vector3 input;
@@ -33,26 +27,26 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        playermelee.action.Enable();
+        
         move.action.Enable();
         dash.action.Enable();
         move.action.performed += SetInput;
         move.action.canceled += StopMovement;
         dash.action.performed += Dash;
-        playermelee.action.performed += PlayerMelee;
+       
 
 
     }
 
     private void OnDisable()
     {
-        playermelee.action.performed -= PlayerMelee;
+       
         move.action.canceled -= StopMovement;
         dash.action.performed -= Dash;
         move.action.performed -= SetInput;
         move.action.Disable();
         dash.action.Disable();  
-        playermelee.action.Disable();
+        
         
     }
 
@@ -67,10 +61,7 @@ public class Player : MonoBehaviour
     }
 
 
-    void PlayerMelee(InputAction.CallbackContext ctw)
-    {
-        print("Mele");
-    }
+   
 
     void Dash(InputAction.CallbackContext ctx)
     {
@@ -86,19 +77,19 @@ public class Player : MonoBehaviour
     void StopMovement(InputAction.CallbackContext ctx)
     {
         input = Vector2.zero;
-        ismoving = false;
+       
     }
 
     void SetInput(InputAction.CallbackContext ctx)
     {
         input = ctx.ReadValue<Vector2>();
-        ismoving = true;
+        
     }
    
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
@@ -109,10 +100,7 @@ public class Player : MonoBehaviour
         {
             rigidbody2d.velocity = input * speed;
             
-            if(ismoving==true)
-            {    
-            StartCoroutine(Walkanimationcycle());
-            }
+           
             
 
         }
@@ -140,13 +128,5 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator Walkanimationcycle()
-    {
-        while (ismoving==true)
-        {     
-        spriteRenderer.sprite = walking1; 
-        yield return new WaitForSeconds(0.2f);
-        spriteRenderer.sprite = walking2; 
-        }
-    }
+    
 }

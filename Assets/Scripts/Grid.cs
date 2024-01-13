@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Grid 
 {
-    new Vector3 parentPosition;
+    Vector3 parentPosition;
     private int width;
     private int height;
     private int[,] gridArray;

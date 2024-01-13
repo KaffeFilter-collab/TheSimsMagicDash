@@ -7,8 +7,8 @@ public class gridtest : MonoBehaviour
 {
     public InputActionReference Griddebugging;
     private Grid grid;
-    new Vector2 mousePosition;
-    private new Vector3 mousepositionchanger;
+    Vector2 mousePosition;
+    private  Vector3 mousepositionchanger;
 
     private void OnEnable()
     {

@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447cec76cb9f66d48bff3c76eddc8c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exsplosion: {fileID: 21300000, guid: 24c11b3506e2f6d468e658188b2bd661, type: 3}
   movementSpeed: 3
-  exsplosion: {fileID: 5962556497123443626, guid: 76468aaf23245b245b93577bb1e0207c, type: 3}
 --- !u!61 &2461811033159633424
 BoxCollider2D:
   m_ObjectHideFlags: 0
