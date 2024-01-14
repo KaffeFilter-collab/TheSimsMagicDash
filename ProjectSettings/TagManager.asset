@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BeeAOE
+  - Enemy
   layers:
   - Default
   - TransparentFX

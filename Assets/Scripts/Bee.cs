@@ -5,18 +5,25 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-
+    //Sprites
     SpriteRenderer spriteRenderer;
     public Sprite exsplosion;
-    [SerializeField] public float movementSpeed = 3f;
+    //OBJ refrences
     GameObject player;
+    
+    //Setting for Balance
+    [SerializeField] public float movementSpeed = 3f;
+    [SerializeField] public int HP;
     public bool canmove;
     private  BoxCollider2D boxCollider2D;
     private new Rigidbody2D rigidbody2D;
     private Enemy enemy;
-    // Start is called before the first frame update
+
+    private bool isExploding;
+    
     void Awake()
     {
+
         boxCollider2D=GetComponent<BoxCollider2D>();
         canmove=true;
         player = GameObject.FindWithTag("Player");
@@ -38,7 +45,10 @@ public class NewBehaviourScript : MonoBehaviour
         {
             StartCoroutine(Exsplosion());
         }
+
+       
     }
+    
     
 
     private void Bee(Vector3 targetPosition)
@@ -62,8 +72,12 @@ public class NewBehaviourScript : MonoBehaviour
             gameObject.transform.localScale =new Vector3(2,2,0);
             boxCollider2D.size = new Vector3(2.3f,2.3f,0);
             yield return new WaitForSeconds(0.5f); 
+            isExploding=true;
+            yield return new WaitForSeconds(0.5f); 
             print("waited");
-            Destroy(gameObject);
+
+            
+           // Destroy(gameObject);
         }
 
     

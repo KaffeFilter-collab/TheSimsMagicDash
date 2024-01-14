@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -50,13 +48,18 @@ public class Player : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         print("debugcollisionworks");
-        if(collision.gameObject.CompareTag("BeeAOE"))
+        if(collision.gameObject.CompareTag("Enemy"))
         {
-            print("HP");
-            HP--;
+          if(Invinicibilityframes==false){
+                HP--;
+                if(HP<=0)
+                {
+            print("Hp down");
+                }
+        }
         }
     }
 
@@ -89,6 +92,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        Invinicibilityframes=false;
         
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
@@ -99,13 +103,12 @@ public class Player : MonoBehaviour
         if (candash == true)
         {
             rigidbody2d.velocity = input * speed;
-            
-           
-            
-
         }
     }
 
+
+
+    
     IEnumerator DashRoutine(Vector2 direction)
     {
 
