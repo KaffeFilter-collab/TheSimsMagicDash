@@ -106,9 +106,169 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: biene sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1510
+        width: 608
+        height: 731
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd76ff5ab2a2b144a74a0e6a2cd3ce5
+      internalID: -1508773960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1510
+        width: 593
+        height: 726
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081fcf5f4f6634c43b88a972f7db3c8a
+      internalID: 3313556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 1511
+        width: 606
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2747847ab549e1c409f58142106f748a
+      internalID: 1086676072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 1549
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2136b0987d9548842af6d59a943bf9ae
+      internalID: 939267638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 496
+        width: 678
+        height: 729
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9609057d593ad004887b4b3624042d03
+      internalID: 1479229802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 494
+        width: 592
+        height: 726
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ca94c3ad15b074fb58b7cefa3593d3
+      internalID: 869151013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 496
+        width: 652
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a2aab0b6bfaa04493c5be8562bf11b
+      internalID: 697147117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +279,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      biene sprite sheet_0: -1508773960
+      biene sprite sheet_1: 3313556
+      biene sprite sheet_2: 1086676072
+      biene sprite sheet_3: 939267638
+      biene sprite sheet_4: 1479229802
+      biene sprite sheet_5: 869151013
+      biene sprite sheet_6: 697147117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

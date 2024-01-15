@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,16 +7,18 @@ public class Player : MonoBehaviour
 {
     [SerializeField] public float wait;
     Rigidbody2D rigidbody2d;
-    //Movment
+    //Controles
     public InputActionReference move;
     public InputActionReference dash;
-   
-   
+    public InputActionReference spell1;
+    public InputActionReference spell2;
+    public bool inspell;
+    GameObject Spell;
     [SerializeField] public float speed = 0;
     private Vector3 input;
     //BasicStats
     [SerializeField] public int HP;
-    [SerializeField] public int Mana;
+    [SerializeField] static int Mana;
     private bool Invinicibilityframes = false;
     private bool candash = true;
     [SerializeField] float dashingstrenght = 5f;
@@ -27,12 +27,15 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        spell1.action.Enable();
+        spell2.action.Enable();
         move.action.Enable();
         dash.action.Enable();
         move.action.performed += SetInput;
         move.action.canceled += StopMovement;
         dash.action.performed += Dash;
+        spell1.action.performed +=Spell1;
+        spell2.action.performed +=Spell2;
        
 
 
@@ -40,23 +43,48 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
-       
+        spell1.action.canceled-=Spell1;
+        spell2.action.canceled-=Spell2;
         move.action.canceled -= StopMovement;
         dash.action.performed -= Dash;
         move.action.performed -= SetInput;
         move.action.Disable();
         dash.action.Disable();  
+        spell1.action.Disable();
+        spell2.action.Disable();
         
         
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         print("debugcollisionworks");
-        if(collision.gameObject.CompareTag("BeeAOE"))
+        if(collision.gameObject.CompareTag("Enemy"))
         {
-            print("HP");
-            HP--;
+          if(Invinicibilityframes==false){
+                HP--;
+                if(HP<=0)
+                {
+            print("Hp down");
+                }
+        }
+        }
+    }
+     public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Wall")) {
+            rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x, -rigidbody2d.velocity.y);
+        }
+
+        if (collision.gameObject.CompareTag("Spell")) {
+            Spell = collision.gameObject;
+            inspell = true;
+            print(inspell);
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collision) {
+        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Spell")) {
+            Spell = collision.gameObject;
+            inspell = false;
         }
     }
 
@@ -85,10 +113,33 @@ public class Player : MonoBehaviour
         input = ctx.ReadValue<Vector2>();
         
     }
+    void Spell1(InputAction.CallbackContext ctx)
+    {
+        if(inspell==true){
+        transform.GetChild(0).DetachChildren();
+        Spell.transform.SetParent(transform.GetChild(0));
+        Spell.transform.localPosition = Vector2.zero;
+        }
+
+        
+        
+    }
+
+    void Spell2(InputAction.CallbackContext ctx)
+    {
+        if(inspell==true){
+        transform.GetChild(1).DetachChildren();
+        Spell.transform.SetParent(transform.GetChild(1));
+        Spell.transform.localPosition = Vector2.zero;
+        }
+        Spell=transform.GetChild(1).GetChild(0).gameObject;
+        Spell.GetComponent<Fireball>().SpellCasted();
+    }
    
 
     private void Awake()
     {
+        Invinicibilityframes=false;
         
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
@@ -99,13 +150,11 @@ public class Player : MonoBehaviour
         if (candash == true)
         {
             rigidbody2d.velocity = input * speed;
-            
-           
-            
-
         }
     }
 
+
+    
     IEnumerator DashRoutine(Vector2 direction)
     {
 

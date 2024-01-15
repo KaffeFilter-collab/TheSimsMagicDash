@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BeeAOE
+  - Enemy
+  - Spell
+  - Wall
   layers:
   - Default
   - TransparentFX

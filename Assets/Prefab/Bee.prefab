@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5318941703674206337}
   - component: {fileID: 2461811033159633424}
   m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: Bee
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.14610566, y: 0.1482069, z: 0}
-  m_LocalScale: {x: 0.5692561, y: 0.28817213, z: 0.74367}
+  m_LocalScale: {x: 0.3271515, y: 0.31431413, z: 0.74367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d67001f081173d94194e7598521feef0, type: 3}
+  m_Sprite: {fileID: 1479229802, guid: f15eed5770b4af549801873c85d5f7d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exsplosion: {fileID: 21300000, guid: 24c11b3506e2f6d468e658188b2bd661, type: 3}
   movementSpeed: 3
+  HP: 0
+  canmove: 0
 --- !u!61 &2461811033159633424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,19 +159,19 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.61, y: 3.3}
+    oldSize: {x: 6.7799997, y: 7.29078}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.61, y: 3.3}
+  m_Size: {x: 4.274344, y: 5.993577}
   m_EdgeRadius: 0

@@ -106,9 +106,253 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: biene attack sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1744
+        width: 608
+        height: 732
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad186d3148d61a42a08dc9b114e1b6d
+      internalID: -520474409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 1632
+        width: 691
+        height: 839
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61dcbcc32061ffc47b1a38278f344d0a
+      internalID: -1595418777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 1782
+        width: 608
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65101f8bc51ef064c86371b71ce96936
+      internalID: -1141409185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3478
+        y: 2024
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a7a74a0036b5f449afe6c14beba16e
+      internalID: 1864783369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 939
+        width: 609
+        height: 699
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc4ec281f57c8c4d91c46a28390e9c0
+      internalID: 1605436222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 957
+        width: 488
+        height: 678
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5869417d76152934e92b24d52c216aa9
+      internalID: 61343858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3076
+        y: 1625
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722ecd35b81a12b4890c21fc4d78d559
+      internalID: 1890930780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 914
+        width: 622
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9680395c9f5424dbd9b77107ee3eb3
+      internalID: 1093943925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 4
+        width: 573
+        height: 807
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52db565563aa9f49913d0aa7aaf182e
+      internalID: 1165181832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 197
+        width: 812
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5bfc454ae241d4990bb03ec6fe3207
+      internalID: -611011394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 25
+        width: 572
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25f16aff6bcb2a4a8ca6f724bea488e
+      internalID: -1184268621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +363,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      biene attack sprite sheet_0: -520474409
+      biene attack sprite sheet_1: -1595418777
+      biene attack sprite sheet_10: -1184268621
+      biene attack sprite sheet_2: -1141409185
+      biene attack sprite sheet_3: 1864783369
+      biene attack sprite sheet_4: 1605436222
+      biene attack sprite sheet_5: 61343858
+      biene attack sprite sheet_6: 1890930780
+      biene attack sprite sheet_7: 1093943925
+      biene attack sprite sheet_8: 1165181832
+      biene attack sprite sheet_9: -611011394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
