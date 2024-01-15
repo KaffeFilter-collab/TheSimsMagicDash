@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: animation seite2 nackt
+  m_Name: animation seite standard
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -574230944, guid: ba0fe38adcece0c4bb772ff44b472f33, type: 3}
+      value: {fileID: 1440524944, guid: 058204e63d142e641a4ddcf5b9218ef1, type: 3}
     - time: 0.083333336
-      value: {fileID: -673247623, guid: ba0fe38adcece0c4bb772ff44b472f33, type: 3}
+      value: {fileID: -1809491477, guid: 058204e63d142e641a4ddcf5b9218ef1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -574230944, guid: ba0fe38adcece0c4bb772ff44b472f33, type: 3}
-    - {fileID: -673247623, guid: ba0fe38adcece0c4bb772ff44b472f33, type: 3}
+    - {fileID: 1440524944, guid: 058204e63d142e641a4ddcf5b9218ef1, type: 3}
+    - {fileID: -1809491477, guid: 058204e63d142e641a4ddcf5b9218ef1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
