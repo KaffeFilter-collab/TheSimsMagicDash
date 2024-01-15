@@ -115,17 +115,26 @@ public class Player : MonoBehaviour
     }
     void Spell1(InputAction.CallbackContext ctx)
     {
+        if(inspell==true){
         transform.GetChild(0).DetachChildren();
         Spell.transform.SetParent(transform.GetChild(0));
         Spell.transform.localPosition = Vector2.zero;
+        }
+
+        
+        
     }
 
     void Spell2(InputAction.CallbackContext ctx)
     {
+        if(inspell==true){
         transform.GetChild(1).DetachChildren();
         Spell.transform.SetParent(transform.GetChild(1));
         Spell.transform.localPosition = Vector2.zero;
         }
+        Spell=transform.GetChild(1).GetChild(0).gameObject;
+        Spell.GetComponent<Fireball>().SpellCasted();
+    }
    
 
     private void Awake()
