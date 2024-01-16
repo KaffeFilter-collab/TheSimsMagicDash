@@ -167,29 +167,29 @@ public class Player : MonoBehaviour
                     {
             animator.SetBool("gehn hoch" , false);
             animator.SetBool("gehn runter" , false);
-            animator.SetBool("gehn rechts" , false);                
-            animator.SetBool("gehn links" , true);
+            animator.SetBool("gehn rechts" , true);                
+            animator.SetBool("gehn links" , false);
                      }
-        else if(input.x <= -0.1)
+        if(input.x <= -0.1)
                     {
             animator.SetBool("gehn hoch" , false);
             animator.SetBool("gehn runter" , false);
             animator.SetBool("gehn rechts" , false);                
             animator.SetBool("gehn links" , true);
                     }
-        else if(input.y >= 0.1)
+         if(input.y >= 0.1)
                     {
             animator.SetBool("gehn hoch" , false);
-            animator.SetBool("gehn runter" , false);
+            animator.SetBool("gehn runter" , true);
             animator.SetBool("gehn rechts" , false);                
-            animator.SetBool("gehn links" , true);
+            animator.SetBool("gehn links" , false);
                     }
-        else if(input.y <= -0.1)
+        if(input.y <= -0.1)
                     {
-            animator.SetBool("gehn hoch" , false);
+            animator.SetBool("gehn hoch" , true);
             animator.SetBool("gehn runter" , false);
             animator.SetBool("gehn rechts" , false);                
-            animator.SetBool("gehn links" , true);
+            animator.SetBool("gehn links" , false);
                     }                       
         }
     }

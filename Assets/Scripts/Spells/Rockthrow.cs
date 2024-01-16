@@ -8,7 +8,7 @@ public class Rockthrow : MonoBehaviour,ISpellInterface
     [SerializeField] private int Manacost;
     [SerializeField] float diffrence;
     public Vector2 mousepositionforspell;
-    public test spellprefab;
+    //public test spellprefab;
     
 
         
@@ -22,7 +22,7 @@ public class Rockthrow : MonoBehaviour,ISpellInterface
             mousepositionforspell = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             //if(Mana >= Manacost){
             //Mana=Mana-Manacost;
-            Instantiate(spellprefab);
+            //Instantiate(spellprefab);
             //}
         }
         public void casted()
@@ -39,7 +39,7 @@ public class Rockthrow : MonoBehaviour,ISpellInterface
             print(mousepositionforspell);
             //if(Mana >= Manacost){
             //Mana=Mana-Manacost;
-            Instantiate(spellprefab);
+            //Instantiate(spellprefab);
             }
             //}
         }

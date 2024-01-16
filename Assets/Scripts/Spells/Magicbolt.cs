@@ -9,7 +9,7 @@ public class Magicbolt : MonoBehaviour,ISpellInterface
     [SerializeField] private int Manacost;
     [SerializeField] float diffrence;
     public Vector2 mousepositionforspell;
-    public test spellprefab;
+    public magicboltspell spellprefab;
     
 
         

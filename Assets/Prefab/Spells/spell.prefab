@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5513974756565237300}
   - component: {fileID: 7157835187584068563}
-  - component: {fileID: 346335843961084718}
   - component: {fileID: 3907855501523123000}
   - component: {fileID: 5663927551793996431}
+  - component: {fileID: 8356150581067096902}
   m_Layer: 1
   m_Name: spell
   m_TagString: Spell
@@ -87,24 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &346335843961084718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2939824900002987297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6f1654b8b2606448ae8efa30262154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Manacost: 0
-  diffrence: 0
-  mousepositionforspell: {x: 0, y: 0}
-  spellprefab: {fileID: 455112225789097496, guid: 55eb4d480fd401d4b92820e311bd750b, type: 3}
-  spell1: {fileID: -7279058703300587421, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
-  spell2: {fileID: -2755900901849756038, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
 --- !u!50 &3907855501523123000
 Rigidbody2D:
   serializedVersion: 4
@@ -177,3 +159,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8356150581067096902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939824900002987297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5f0c4d27960d946b8db91f7c7d688a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Manacost: 0
+  diffrence: 0
+  mousepositionforspell: {x: 0, y: 0}
+  spellprefab: {fileID: -6279611563673380885, guid: 43e57f5c9f57f6c44bf1ba61c0958164, type: 3}
