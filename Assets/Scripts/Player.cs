@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public bool inspell;
     GameObject Spell;
     [SerializeField] public float speed = 0;
-    private Vector3 input;
+    public Vector3 input;
     //BasicStats
     [SerializeField] public int HP;
     [SerializeField] static int Mana;
@@ -24,13 +24,13 @@ public class Player : MonoBehaviour
     private bool candash = true;
     [SerializeField] float dashingstrenght = 5f;
     [SerializeField] float dashspeed = 5f;
-
     public delegate void Spell1casted();
     public delegate void Spell2casted();
-
     public static event Spell1casted spell1casted;
     public static event Spell2casted spell2casted; 
-
+    ISpellInterface spellInterface;
+    //Animation
+    private Animator animator;
 
     private void OnEnable()
     {
@@ -63,6 +63,13 @@ public class Player : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        Invinicibilityframes=false;
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        animator=GetComponent<Animator>();
+    }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         print("debugcollisionworks");
@@ -120,19 +127,20 @@ public class Player : MonoBehaviour
     {
         input = ctx.ReadValue<Vector2>();
         
+        
     }
     void Spell1(InputAction.CallbackContext ctx)
     {
-        print("buttonworks");
+      //  print("buttonworks");
         if(inspell==true && Spell.transform.parent==null){
-        print("inif");
         transform.GetChild(0).DetachChildren();
         Spell.transform.SetParent(transform.GetChild(0));
         Spell.transform.localPosition = Vector2.zero;
         }
-        spell1casted?.Invoke();
-
-        
+       if(transform.GetChild(0).GetChild(0)!=null){
+        ISpellInterface spellInterface = transform.GetChild(0).GetComponentInChildren<ISpellInterface>();
+        spellInterface.casted();
+       }
         
     }
 
@@ -143,15 +151,11 @@ public class Player : MonoBehaviour
         Spell.transform.SetParent(transform.GetChild(1));
         Spell.transform.localPosition = Vector2.zero;
         }
+        
         spell2casted?.Invoke();
     }
    
 
-    private void Awake()
-    {
-        Invinicibilityframes=false;
-        rigidbody2d = GetComponent<Rigidbody2D>();
-    }
 
 
     private void FixedUpdate()
@@ -159,6 +163,34 @@ public class Player : MonoBehaviour
         if (candash == true)
         {
             rigidbody2d.velocity = input * speed;
+            if(input.x >= 0.1)
+                    {
+            animator.SetBool("gehn hoch" , false);
+            animator.SetBool("gehn runter" , false);
+            animator.SetBool("gehn rechts" , false);                
+            animator.SetBool("gehn links" , true);
+                     }
+        else if(input.x <= -0.1)
+                    {
+            animator.SetBool("gehn hoch" , false);
+            animator.SetBool("gehn runter" , false);
+            animator.SetBool("gehn rechts" , false);                
+            animator.SetBool("gehn links" , true);
+                    }
+        else if(input.y >= 0.1)
+                    {
+            animator.SetBool("gehn hoch" , false);
+            animator.SetBool("gehn runter" , false);
+            animator.SetBool("gehn rechts" , false);                
+            animator.SetBool("gehn links" , true);
+                    }
+        else if(input.y <= -0.1)
+                    {
+            animator.SetBool("gehn hoch" , false);
+            animator.SetBool("gehn runter" , false);
+            animator.SetBool("gehn rechts" , false);                
+            animator.SetBool("gehn links" , true);
+                    }                       
         }
     }
 

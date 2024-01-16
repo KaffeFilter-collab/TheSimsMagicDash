@@ -1,28 +1,17 @@
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.InputSystem;
-
-public class Fireball : MonoBehaviour
+public class Rockthrow : MonoBehaviour,ISpellInterface
 {
-    static int Mana;
+     static int Mana;
     [SerializeField] private int Manacost;
     [SerializeField] float diffrence;
     public Vector2 mousepositionforspell;
     public test spellprefab;
     
 
-        public void OnEnable()
-        {
-            Player.spell1casted+=Spell1casted;
-            Player.spell2casted+=Spell2casted;
-           
-        }
-        public void OnDisable()
-        {
-            Player.spell1casted-=Spell1casted;
-            Player.spell2casted-=Spell2casted;
-        }
+        
         public void Update()
        {
         if(transform.parent!=null)transform.localPosition= new Vector3(0,0,0);
@@ -36,19 +25,23 @@ public class Fireball : MonoBehaviour
             Instantiate(spellprefab);
             //}
         }
-
+        public void casted()
+        {
+            print("interface working");
+        }
         void Spell1casted()
         {
-            print("Spellinput is working");
-          //  if(gameObject.GetComponentInParent<Transform>().tag == "SpellSlot1")
-           // {
+            
+            print("Hi"+gameObject.GetComponentInParent<Transform>().tag);
+            if(gameObject.GetComponentInParent<Transform>().tag == "SpellSlot1")    
+            {
             mousepositionforspell = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             print(mousepositionforspell);
             //if(Mana >= Manacost){
             //Mana=Mana-Manacost;
             Instantiate(spellprefab);
+            }
             //}
-          //  }
         }
         void Spell2casted()
         {
@@ -58,5 +51,4 @@ public class Fireball : MonoBehaviour
                 print("debug");
             }
         }
-
 }
