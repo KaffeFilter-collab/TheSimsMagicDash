@@ -102,6 +102,9 @@ MonoBehaviour:
   Manacost: 0
   diffrence: 0
   mousepositionforspell: {x: 0, y: 0}
+  spellprefab: {fileID: 455112225789097496, guid: 55eb4d480fd401d4b92820e311bd750b, type: 3}
+  spell1: {fileID: -7279058703300587421, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
+  spell2: {fileID: -2755900901849756038, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
 --- !u!50 &3907855501523123000
 Rigidbody2D:
   serializedVersion: 4

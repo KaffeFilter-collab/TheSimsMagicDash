@@ -2,6 +2,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
     public InputActionReference dash;
     public InputActionReference spell1;
     public InputActionReference spell2;
-    public bool inspell;
+    [HideInInspector] public bool inspell;
     GameObject Spell;
     [SerializeField] public float speed = 0;
     private Vector3 input;
@@ -23,6 +24,12 @@ public class Player : MonoBehaviour
     private bool candash = true;
     [SerializeField] float dashingstrenght = 5f;
     [SerializeField] float dashspeed = 5f;
+
+    public delegate void Spell1casted();
+    public delegate void Spell2casted();
+
+    public static event Spell1casted spell1casted;
+    public static event Spell2casted spell2casted; 
 
 
     private void OnEnable()
@@ -76,6 +83,7 @@ public class Player : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Spell")) {
+            print("inspell");
             Spell = collision.gameObject;
             inspell = true;
             print(inspell);
@@ -115,11 +123,14 @@ public class Player : MonoBehaviour
     }
     void Spell1(InputAction.CallbackContext ctx)
     {
-        if(inspell==true){
+        print("buttonworks");
+        if(inspell==true && Spell.transform.parent==null){
+        print("inif");
         transform.GetChild(0).DetachChildren();
         Spell.transform.SetParent(transform.GetChild(0));
         Spell.transform.localPosition = Vector2.zero;
         }
+        spell1casted?.Invoke();
 
         
         
@@ -127,20 +138,18 @@ public class Player : MonoBehaviour
 
     void Spell2(InputAction.CallbackContext ctx)
     {
-        if(inspell==true){
+        if(inspell==true && Spell.transform.parent==null){
         transform.GetChild(1).DetachChildren();
         Spell.transform.SetParent(transform.GetChild(1));
         Spell.transform.localPosition = Vector2.zero;
         }
-        Spell=transform.GetChild(1).GetChild(0).gameObject;
-        Spell.GetComponent<Fireball>().SpellCasted();
+        spell2casted?.Invoke();
     }
    
 
     private void Awake()
     {
         Invinicibilityframes=false;
-        
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
@@ -157,7 +166,6 @@ public class Player : MonoBehaviour
     
     IEnumerator DashRoutine(Vector2 direction)
     {
-
         candash = false;
         Invinicibilityframes = true;
         while (candash == false) {
@@ -168,10 +176,8 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(wait);
 
         }
-       
         rigidbody2d.velocity = new Vector2(0f, 0f);
         Invinicibilityframes = false;
-        
         dashspeed = 10;
         print(dashspeed);
         yield return null;
