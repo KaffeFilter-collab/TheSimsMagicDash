@@ -8,11 +8,16 @@ public class Magicbolt : MonoBehaviour,ISpellInterface
     static int Mana;
     [SerializeField] private int Manacost;
     [SerializeField] float diffrence;
+    Rigidbody2D rigidbody2D;
     public Vector2 mousepositionforspell;
     public magicboltspell spellprefab;
     
 
-        
+        public void Start()
+        {
+            rigidbody2D=gameObject.GetComponent<Rigidbody2D>();
+        }
+
         public void Update()
        {
         if(transform.parent!=null)transform.localPosition= new Vector3(0,0,0);
@@ -21,14 +26,15 @@ public class Magicbolt : MonoBehaviour,ISpellInterface
         public void SpellCasted()
         {
             mousepositionforspell = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            //if(Mana >= Manacost){
-            //Mana=Mana-Manacost;
-            Instantiate(spellprefab);
-            //}
+            if(Mana >= Manacost){
+            Mana=Mana-Manacost;
+            Instantiate(spellprefab,rigidbody2D.transform);
+            }
         }
         public void casted()
         {
-            print("interface working");
+            print("casted");
+            SpellCasted();
         }
         void Spell1casted()
         {

@@ -156,14 +156,9 @@ public class Player : MonoBehaviour
     }
    
 
-
-
-    private void FixedUpdate()
+    private void Update()
     {
-        if (candash == true)
-        {
-            rigidbody2d.velocity = input * speed;
-            if(input.x >= 0.1)
+         if(input.x >= 0.1)
                     {
             animator.SetBool("gehn hoch" , false);
             animator.SetBool("gehn runter" , false);
@@ -190,7 +185,15 @@ public class Player : MonoBehaviour
             animator.SetBool("gehn runter" , false);
             animator.SetBool("gehn rechts" , false);                
             animator.SetBool("gehn links" , false);
-                    }                       
+                    }  
+    }
+
+    private void FixedUpdate()
+    {
+        if (candash == true)
+        {
+            rigidbody2d.velocity = input * speed;
+                                
         }
     }
 
