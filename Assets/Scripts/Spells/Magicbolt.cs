@@ -25,38 +25,18 @@ public class Magicbolt : MonoBehaviour,ISpellInterface
         
         public void SpellCasted()
         {
-            mousepositionforspell = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            
             if(Mana >= Manacost){
             Mana=Mana-Manacost;
             Instantiate(spellprefab,rigidbody2D.transform);
+            transform.DetachChildren();
             }
         }
+
         public void casted()
         {
             print("casted");
             SpellCasted();
-        }
-        void Spell1casted()
-        {
-            
-            print("Hi"+gameObject.GetComponentInParent<Transform>().tag);
-            if(gameObject.GetComponentInParent<Transform>().tag == "SpellSlot1")    
-            {
-            mousepositionforspell = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            print(mousepositionforspell);
-            //if(Mana >= Manacost){
-            //Mana=Mana-Manacost;
-            Instantiate(spellprefab);
-            }
-            //}
-        }
-        void Spell2casted()
-        {
-        if(gameObject.GetComponentInParent<Transform>().tag == "SpellSlot2")
-            {
-                SpellCasted();
-                print("debug");
-            }
         }
 
 }

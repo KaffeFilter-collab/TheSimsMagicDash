@@ -40,7 +40,6 @@ public class NewBehaviourScript : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         canmove=false;
-        print("outsideif");
         if(collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Exsplosion());
@@ -66,7 +65,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
     IEnumerator Exsplosion()
         {
-            print("inIFstatment");
+            
             canmove=false;
             spriteRenderer.sprite = exsplosion; 
             gameObject.transform.localScale =new Vector3(2,2,0);
@@ -74,7 +73,7 @@ public class NewBehaviourScript : MonoBehaviour
             yield return new WaitForSeconds(0.5f); 
             isExploding=true;
             yield return new WaitForSeconds(0.5f); 
-            print("waited");
+            
 
             
            // Destroy(gameObject);

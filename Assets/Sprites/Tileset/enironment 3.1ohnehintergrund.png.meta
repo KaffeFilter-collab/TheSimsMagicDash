@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3cbfde09612e534f86936a0b2a8813b
+guid: 50817c64d9d429e489fc5d2b29c53ff1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,6 +72,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_0
+      name: enironment 3.1ohnehintergrund_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 409
-        width: 188
-        height: 160
+        x: 168
+        y: 3018
+        width: 203
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,104 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7682d9b3b5de624d820fd0267fd688d
-      internalID: 160192159
+      spriteID: b74fc7cb91653284e9d25e4aec92f219
+      internalID: -105925122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_1
+      name: enironment 3.1ohnehintergrund_1
       rect:
         serializedVersion: 2
-        x: 242
-        y: 407
-        width: 162
-        height: 190
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4f773b895a8aa4418488ead16944401
-      internalID: 41586930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_2
-      rect:
-        serializedVersion: 2
-        x: 482
-        y: 364
-        width: 119
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 957283650affd4a4da4a3812a52396a4
-      internalID: 880620678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_3
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 445
-        width: 188
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99014af57a465d541805ee9761fcf00d
-      internalID: 1581110057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_4
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 228
-        width: 178
-        height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce1fcf0b277f7014196cd29253fe01ab
-      internalID: -1455466802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_5
-      rect:
-        serializedVersion: 2
-        x: 857
-        y: 256
+        x: 869
+        y: 3283
         width: 6
-        height: 4
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf63d61b91d44fe4ba47aad5793ed4ba
-      internalID: -1131676522
+      spriteID: da769be1cf0344c43a9b3c2274b0ca9f
+      internalID: 604563117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_6
+      name: enironment 3.1ohnehintergrund_2
       rect:
         serializedVersion: 2
-        x: 856
-        y: 251
-        width: 5
-        height: 5
+        x: 1270
+        y: 2934
+        width: 257
+        height: 535
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10c05b5010e74aa4aa859b5cbfd1b447
-      internalID: 1091792837
+      spriteID: f67b9b0cdb0834e4c8d49d27e6082e82
+      internalID: -1593983124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_7
+      name: enironment 3.1ohnehintergrund_3
       rect:
         serializedVersion: 2
-        x: 71
-        y: 61
-        width: 112
-        height: 165
+        x: 1725
+        y: 2926
+        width: 584
+        height: 478
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19e5e3e6ea08f5b49aa19a498f3dd8b6
-      internalID: -1569118178
+      spriteID: 9676c638710f61d478b6976f7639329d
+      internalID: -259095202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_8
+      name: enironment 3.1ohnehintergrund_4
       rect:
         serializedVersion: 2
-        x: 255
-        y: 59
-        width: 107
-        height: 191
+        x: 631
+        y: 2926
+        width: 258
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 294a08feb4adedd42bc3261c460c7c9f
-      internalID: 2131013111
+      spriteID: 40cde50b218472a4f9c2f01071308681
+      internalID: -1306923990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_9
+      name: enironment 3.1ohnehintergrund_5
       rect:
         serializedVersion: 2
-        x: 454
-        y: 79
-        width: 184
-        height: 167
+        x: 2938
+        y: 2762
+        width: 369
+        height: 431
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a7301c6e1562a244a3ec7fd0d1eab4f
-      internalID: 1724848059
+      spriteID: c6a9c32e6c6c42b4d9df15bc69a0da79
+      internalID: 569721397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath Attack Sprite Sheet.png_10
+      name: enironment 3.1ohnehintergrund_6
       rect:
         serializedVersion: 2
-        x: 744
-        y: 16
-        width: 116
-        height: 181
+        x: 1170
+        y: 1818
+        width: 590
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,8 +263,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c32d562594efed143a4d642f6380b965
-      internalID: 495740684
+      spriteID: 13915ae53bce5b14ba8fb9dd406cbeae
+      internalID: -498542019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enironment 3.1ohnehintergrund_7
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 1703
+        width: 455
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c083c5d73468d4ba62ae15131123b3
+      internalID: -967970890
       vertices: []
       indices: 
       edges: []
@@ -351,17 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goliath Attack Sprite Sheet.png_0: 160192159
-      Goliath Attack Sprite Sheet.png_1: 41586930
-      Goliath Attack Sprite Sheet.png_10: 495740684
-      Goliath Attack Sprite Sheet.png_2: 880620678
-      Goliath Attack Sprite Sheet.png_3: 1581110057
-      Goliath Attack Sprite Sheet.png_4: -1455466802
-      Goliath Attack Sprite Sheet.png_5: -1131676522
-      Goliath Attack Sprite Sheet.png_6: 1091792837
-      Goliath Attack Sprite Sheet.png_7: -1569118178
-      Goliath Attack Sprite Sheet.png_8: 2131013111
-      Goliath Attack Sprite Sheet.png_9: 1724848059
+      enironment 3.1ohnehintergrund_0: -105925122
+      enironment 3.1ohnehintergrund_1: 604563117
+      enironment 3.1ohnehintergrund_2: -1593983124
+      enironment 3.1ohnehintergrund_3: -259095202
+      enironment 3.1ohnehintergrund_4: -1306923990
+      enironment 3.1ohnehintergrund_5: 569721397
+      enironment 3.1ohnehintergrund_6: -498542019
+      enironment 3.1ohnehintergrund_7: -967970890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

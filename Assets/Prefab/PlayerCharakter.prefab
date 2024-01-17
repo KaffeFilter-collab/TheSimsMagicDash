@@ -110,6 +110,7 @@ MonoBehaviour:
   spell2: {fileID: -2755900901849756038, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
   inspell: 0
   speed: 3.5
+  input: {x: 0, y: 0, z: 0}
   HP: 3
   dashingstrenght: 0.9
   dashspeed: 10
@@ -302,7 +303,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4492493455440094010, guid: f299830b26cb6954593d9aa02e330225, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 4492493455440094010, guid: f299830b26cb6954593d9aa02e330225, type: 3}
       propertyPath: m_LocalPosition.y
@@ -347,10 +348,63 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5447065434458681118, guid: f299830b26cb6954593d9aa02e330225, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7717294967205461980}
   m_SourcePrefab: {fileID: 100100000, guid: f299830b26cb6954593d9aa02e330225, type: 3}
 --- !u!4 &3304085135460690395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4492493455440094010, guid: f299830b26cb6954593d9aa02e330225, type: 3}
   m_PrefabInstance: {fileID: 1405964287738792673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6347014662671410687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5447065434458681118, guid: f299830b26cb6954593d9aa02e330225, type: 3}
+  m_PrefabInstance: {fileID: 1405964287738792673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &7717294967205461980
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6347014662671410687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.58, y: 0.5}
+  m_EdgeRadius: 0
