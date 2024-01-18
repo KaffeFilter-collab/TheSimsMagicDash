@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public InputActionReference dash;
     public InputActionReference spell1;
     public InputActionReference spell2;
+    public InputActionReference meleeattack;
     [HideInInspector] public bool inspell;
     GameObject Spell;
     [SerializeField] public float speed = 0;
@@ -39,18 +40,18 @@ public class Player : MonoBehaviour
         spell2.action.Enable();
         move.action.Enable();
         dash.action.Enable();
+        meleeattack.action.Enable();
         move.action.performed += SetInput;
         move.action.canceled += StopMovement;
         dash.action.performed += Dash;
         spell1.action.performed += Spell1;
         spell2.action.performed += Spell2;
-
-
-
+        meleeattack.action.performed += Meleeattack;
     }
 
     private void OnDisable()
     {
+        meleeattack.action.canceled -= Meleeattack;
         spell1.action.canceled -= Spell1;
         spell2.action.canceled -= Spell2;
         move.action.canceled -= StopMovement;
@@ -60,12 +61,13 @@ public class Player : MonoBehaviour
         dash.action.Disable();
         spell1.action.Disable();
         spell2.action.Disable();
-
+        meleeattack.action.Disable();
 
     }
 
     private void Awake()
     {
+        meleehit = GetComponentInChildren<Meleehit>();
         Invinicibilityframes = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -103,7 +105,13 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    void Meleeattack(InputAction.CallbackContext ctx)
+    {
+       
+        
+        
+        meleehit.Attack();
+    }
 
 
     void Dash(InputAction.CallbackContext ctx)
@@ -126,7 +134,22 @@ public class Player : MonoBehaviour
     void SetInput(InputAction.CallbackContext ctx)
     {
         input = ctx.ReadValue<Vector2>();
-
+        if (input.x >= 0.1)
+        {
+            meleehit.attackdirection = Meleehit.Attackdirection.right;
+        }
+        if (input.x <= -0.1)
+        {
+            meleehit.attackdirection = Meleehit.Attackdirection.left;
+        }
+        if (input.y >= 0.1)
+        {
+            meleehit.attackdirection = Meleehit.Attackdirection.up;
+        }
+        if (input.y <= -0.1)
+        {
+            meleehit.attackdirection = Meleehit.Attackdirection.down;
+        }
 
     }
     void Spell1(InputAction.CallbackContext ctx)
@@ -194,7 +217,18 @@ public class Player : MonoBehaviour
         {
             if (candash == true)
             {
-                rigidbody2d.velocity = input * speed;
+                if (input.y != 0)
+                {
+                    rigidbody2d.velocity = input * new Vector2(0,1)*speed;
+                }
+                if (input.x != 0)
+                {
+                    rigidbody2d.velocity = input * new Vector2(1,0)*speed;
+                }
+                if(input.y== 0f && input.x== 0f)
+                {
+                    rigidbody2d.velocity=new Vector2(0,0);
+                }
 
             }
         }
