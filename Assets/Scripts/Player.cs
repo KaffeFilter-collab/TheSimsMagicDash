@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] public float wait;
     Rigidbody2D rigidbody2d;
     
+    //Sprites
+    public Sprite attack_up;
+    public Sprite attack_down;
+    public Sprite attack_left;
+    public Sprite attack_right;
     //Controles
     public Meleehit meleehit;
     public InputActionReference move;
