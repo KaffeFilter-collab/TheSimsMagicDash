@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - SpellSlot1
   - SpellSlot2
+  - PlayerMelee
+  - SpellProjektile
   layers:
   - Default
   - TransparentFX

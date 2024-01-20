@@ -10,6 +10,12 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidbody2d;
     
     //Sprites
+    public enum AttackAnimation
+    {
+        up,down,left,right
+    }
+    public AttackAnimation attackanimation;
+    public SpriteRenderer spriteRenderer;
     public Sprite attack_up;
     public Sprite attack_down;
     public Sprite attack_left;
@@ -72,6 +78,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         meleehit = GetComponentInChildren<Meleehit>();
         Invinicibilityframes = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -112,9 +119,29 @@ public class Player : MonoBehaviour
 
     void Meleeattack(InputAction.CallbackContext ctx)
     {
-       
-        
-        
+       if (input.x >= 0.1)
+        {
+            spriteRenderer.sprite=attack_right;
+            print("inif");
+        }
+        if (input.x <= -0.1)
+        {
+            spriteRenderer.sprite=attack_left;
+            print("inif");
+
+        }
+        if (input.y >= 0.1)
+        {
+            spriteRenderer.sprite=attack_up;
+            print("inif");
+
+        }
+        if (input.y <= -0.1)
+        {
+            spriteRenderer.sprite=attack_down;
+            print("inif");
+
+        }
         meleehit.Attack();
     }
 
@@ -258,5 +285,25 @@ public class Player : MonoBehaviour
             yield return null;
         }
 
+        IEnumerator AttackAnimationCorrotine()
+        {
+            switch(attackanimation)
+            {
+                case AttackAnimation.up:
+                spriteRenderer.sprite=attack_up;
+                break;
+                case AttackAnimation.down:
+                spriteRenderer.sprite=attack_down;
+                break;
+                case AttackAnimation.left:
+                spriteRenderer.sprite=attack_left;
+                break;
+                case AttackAnimation.right:
+                spriteRenderer.sprite=attack_right;
+                break;
+            }
+            yield return new WaitForSeconds(0.5f);
+            
+        }
 
     }

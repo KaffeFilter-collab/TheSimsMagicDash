@@ -104,6 +104,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wait: 0.08
+  spriteRenderer: {fileID: 0}
+  attack_up: {fileID: 21300000, guid: 68fe78b14e6419d4dbdf1df1d2493b49, type: 3}
+  attack_down: {fileID: 21300000, guid: f49daf12ad9462f4a98cd23e6a4af7b2, type: 3}
+  attack_left: {fileID: 21300000, guid: cee84f7d00f247946b74c3876ea9458f, type: 3}
+  attack_right: {fileID: 21300000, guid: 7df9b4a923d668641a1076a1d6cb56bd, type: 3}
   meleehit: {fileID: 0}
   move: {fileID: -5954798466029011530, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
   dash: {fileID: 8266486012412621286, guid: 779f7349943dd7d49aef7ea7ff88e51d, type: 3}
@@ -414,3 +419,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackdirection: 0
+  AttackOffsety: {x: 0, y: 0}
