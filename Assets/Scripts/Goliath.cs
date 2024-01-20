@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Goliath : MonoBehaviour
+public class Goliath : MonoBehaviour,IEnemyinterface
 {
     Vector2 playerposition;
     GameObject player;
     [SerializeField] public float movementSpeed = 3f;
     [SerializeField] public int HP;
-    public bool canmove;
+    private bool canmove;
     private  BoxCollider2D boxCollider2D;
     private new Rigidbody2D rigidbody2D;
     private Enemy enemy;
-    public GoliathMeleeAttack goliathMeleeAttack;
+    private GoliathMeleeAttack goliathMeleeAttack;
+
     void Awake()
     {
         goliathMeleeAttack = GetComponentInChildren<GoliathMeleeAttack>();
@@ -36,6 +37,7 @@ public class Goliath : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.CompareTag("Player") && canmove==true){
         playerposition=player.transform.position;
         if (playerposition.x >= 0.1)
         {
@@ -53,9 +55,6 @@ public class Goliath : MonoBehaviour
         {
             goliathMeleeAttack.attackdirection = GoliathMeleeAttack.Attackdirection.down;
         }
-
-        if(collision.gameObject.CompareTag("Player") && canmove==true)
-        {
             goliathMeleeAttack.Attack();
             canmove=false;
             StartCoroutine(Meleewait());
@@ -78,10 +77,24 @@ public class Goliath : MonoBehaviour
         }
     }
 
+    public void gothit(int damage)
+    {
+        HP=HP-damage;
+        print(HP);
+        if(HP<=0)
+        {
+            StartCoroutine(Death());
+        }
+    }
     IEnumerator Meleewait()
     {
         yield return new WaitForSeconds(1);
         canmove=true;
+    }
+    IEnumerator Death()
+    {
+        yield return null;
+        Destroy(gameObject);
     }
 }
 

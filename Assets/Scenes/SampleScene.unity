@@ -156,6 +156,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.09412032
       objectReference: {fileID: 0}
+    - target: {fileID: 7340643916495407577, guid: 15598f24c54378147b9461a1e9cdd04d, type: 3}
+      propertyPath: HP
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340643916495407577, guid: 15598f24c54378147b9461a1e9cdd04d, type: 3}
+      propertyPath: movementSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8178825461081255441, guid: 15598f24c54378147b9461a1e9cdd04d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.53535074

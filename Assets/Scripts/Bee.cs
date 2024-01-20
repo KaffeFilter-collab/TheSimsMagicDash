@@ -76,7 +76,7 @@ public class NewBehaviourScript : MonoBehaviour
             
 
             
-           // Destroy(gameObject);
+           Destroy(gameObject);
         }
 
     
