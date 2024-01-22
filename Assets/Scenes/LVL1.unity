@@ -296,7 +296,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4887, y: -0.567, z: -10}
+  m_LocalPosition: {x: -8.02341, y: 0.11549093, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -442,6 +442,11 @@ Transform:
   - {fileID: 1606090448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &648963323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8017211505805610613, guid: f83d3c2d57e02fc42ba8834f4c25689f, type: 3}
+  m_PrefabInstance: {fileID: 592738835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979473350
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +484,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 648963323}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 3.8655438
@@ -508,7 +513,7 @@ Transform:
   m_GameObject: {fileID: 979473350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4887, y: -0.567, z: -10}
+  m_LocalPosition: {x: -8.02341, y: 0.11549093, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -688,7 +693,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
