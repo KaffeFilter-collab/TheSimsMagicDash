@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f2ea3e788aec81948b7e070c76e84ac4
+guid: 984a3afb5aaf7294e9da0f06619eaa56
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 105
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,17 +106,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bienen attack links_0
+      name: main_character amimation hinten nackt 1_0
       rect:
         serializedVersion: 2
-        x: 263
-        y: 1632
-        width: 691
-        height: 838
+        x: 254
+        y: 900
+        width: 301
+        height: 756
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef25c948907929d42b7048fbce904bd5
-      internalID: 595062449
+      spriteID: d3617bacb93f37f4b9b28b71c161377e
+      internalID: 1375487761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bienen attack links_1
+      name: main_character amimation hinten nackt 1_1
       rect:
         serializedVersion: 2
-        x: 285
-        y: 956
-        width: 488
-        height: 678
+        x: 245
+        y: 56
+        width: 301
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,29 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a98fe1f55a8c1ee4cab40fd15e410477
-      internalID: 1921927582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bienen attack links_2
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 197
-        width: 813
-        height: 502
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 129d8ae2db4233249bbb009207c40ebb
-      internalID: -839101147
+      spriteID: 74533d6cec982e54db57dfef51b13545
+      internalID: 243432937
       vertices: []
       indices: 
       edges: []
@@ -183,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bienen attack links_0: 595062449
-      bienen attack links_1: 1921927582
-      bienen attack links_2: -839101147
+      main_character amimation hinten nackt 1_0: 1375487761
+      main_character amimation hinten nackt 1_1: 243432937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

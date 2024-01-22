@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8980a2a31d63d2445a1137f03fea0b9d
+guid: 9d1d4dffc2ec3504192c0ec0780e30f5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,17 +106,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: biene fly links_0
+      name: biene attack hinten_0
       rect:
         serializedVersion: 2
-        x: 200
-        y: 1509
-        width: 593
-        height: 726
+        x: 170
+        y: 1783
+        width: 608
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8b2be22c9d17cb4db8738304d59ef79
-      internalID: 1243970759
+      spriteID: 06f8b65ccefaf3941942d13981610586
+      internalID: -1357423567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: biene fly links_1
+      name: biene attack hinten_1
       rect:
         serializedVersion: 2
-        x: 197
-        y: 495
-        width: 593
-        height: 725
+        x: 182
+        y: 915
+        width: 620
+        height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +158,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa4a314fa7a0d6b45afe9fbfc62d3d30
-      internalID: -779545003
+      spriteID: 07d0d5ec2afdd084e98e6e55990040fc
+      internalID: 1829587837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biene attack hinten_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 25
+        width: 573
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df118c9467292c44cae26d054cc996ff
+      internalID: -1567207609
       vertices: []
       indices: 
       edges: []
@@ -162,8 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      biene fly links_0: 1243970759
-      biene fly links_1: -779545003
+      biene attack hinten_0: -1357423567
+      biene attack hinten_1: 1829587837
+      biene attack hinten_2: -1567207609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

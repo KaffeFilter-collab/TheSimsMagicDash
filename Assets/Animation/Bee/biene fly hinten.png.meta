@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 439ef4b7558da334b9c50d49e83ae542
+guid: 31516eea83c58fd4fafc19481156aa4f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,17 +106,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: biene fly vorne_0
+      name: biene fly hinten_0
       rect:
         serializedVersion: 2
-        x: 194
-        y: 1510
-        width: 608
-        height: 731
+        x: 142
+        y: 1512
+        width: 607
+        height: 689
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b765d5f3b27b5c947ab50ad587925d8d
-      internalID: 867405887
+      spriteID: f53b8e56ccf8fea48904560f5636f506
+      internalID: 872243050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: biene fly vorne_1
+      name: biene fly hinten_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 495
-        width: 678
-        height: 731
+        x: 120
+        y: 497
+        width: 652
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab0b8d772ca86f47b4a4577dbb8a709
-      internalID: -1780726489
+      spriteID: 5a36afcedeef582419878faa8de0e5bd
+      internalID: -1712049935
       vertices: []
       indices: 
       edges: []
@@ -162,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      biene fly vorne_0: 867405887
-      biene fly vorne_1: -1780726489
+      biene fly hinten_0: 872243050
+      biene fly hinten_1: -1712049935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

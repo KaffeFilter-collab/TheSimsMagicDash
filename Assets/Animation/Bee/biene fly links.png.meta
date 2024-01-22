@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73bb55243b466da4eba88f0b700670b5
+guid: 8980a2a31d63d2445a1137f03fea0b9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,17 +106,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goliath walk hinten_0
+      name: biene fly links_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 255
-        width: 188
-        height: 164
+        x: 200
+        y: 1509
+        width: 593
+        height: 726
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2cc99ec57a16924985755f6709ce9b0
-      internalID: -1032111162
+      spriteID: e8b2be22c9d17cb4db8738304d59ef79
+      internalID: 1243970759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goliath walk hinten_1
+      name: biene fly links_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 39
-        width: 188
-        height: 165
+        x: 197
+        y: 495
+        width: 593
+        height: 725
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fc2ebbdbfb00ce47bb38c152df6598b
-      internalID: -2115638356
+      spriteID: aa4a314fa7a0d6b45afe9fbfc62d3d30
+      internalID: -779545003
       vertices: []
       indices: 
       edges: []
@@ -162,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goliath walk hinten_0: -1032111162
-      Goliath walk hinten_1: -2115638356
+      biene fly links_0: 1243970759
+      biene fly links_1: -779545003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

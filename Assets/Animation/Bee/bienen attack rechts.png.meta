@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d1d4dffc2ec3504192c0ec0780e30f5
+guid: a432a913cd87efa40833a68386d21503
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,17 +106,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: biene attack hinten_0
+      name: bienen attack rechts_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 1783
-        width: 608
-        height: 688
+        x: 104
+        y: 1632
+        width: 691
+        height: 838
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06f8b65ccefaf3941942d13981610586
-      internalID: -1357423567
+      spriteID: e817a0de5c63bb64ea0245842636b87b
+      internalID: -1482352185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: biene attack hinten_1
+      name: bienen attack rechts_1
       rect:
         serializedVersion: 2
-        x: 182
-        y: 915
-        width: 620
-        height: 602
+        x: 285
+        y: 956
+        width: 488
+        height: 678
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d0d5ec2afdd084e98e6e55990040fc
-      internalID: 1829587837
+      spriteID: 4eaabcc3678a76a4ea85d9df706a7056
+      internalID: 963395523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: biene attack hinten_2
+      name: bienen attack rechts_2
       rect:
         serializedVersion: 2
-        x: 221
-        y: 25
-        width: 573
-        height: 666
+        x: 172
+        y: 197
+        width: 813
+        height: 502
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df118c9467292c44cae26d054cc996ff
-      internalID: -1567207609
+      spriteID: 82272f930a535bc49905a22de5a65a26
+      internalID: -946575101
       vertices: []
       indices: 
       edges: []
@@ -183,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      biene attack hinten_0: -1357423567
-      biene attack hinten_1: 1829587837
-      biene attack hinten_2: -1567207609
+      bienen attack rechts_0: -1482352185
+      bienen attack rechts_1: 963395523
+      bienen attack rechts_2: -946575101
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

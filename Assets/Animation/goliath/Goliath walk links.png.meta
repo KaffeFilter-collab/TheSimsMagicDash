@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a432a913cd87efa40833a68386d21503
+guid: f1be0764f7fc129408d603a9d1b92da9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,17 +106,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bienen attack rechts_0
+      name: Goliath walk seite_0
       rect:
         serializedVersion: 2
-        x: 104
-        y: 1632
-        width: 691
-        height: 838
+        x: 58
+        y: 39
+        width: 112
+        height: 165
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e817a0de5c63bb64ea0245842636b87b
-      internalID: -1482352185
+      spriteID: c66b027eaf7543b41a85dac9093cf30d
+      internalID: -2109965645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bienen attack rechts_1
+      name: Goliath walk seite_1
       rect:
         serializedVersion: 2
-        x: 285
-        y: 956
-        width: 488
-        height: 678
+        x: 309
+        y: 39
+        width: 112
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,29 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eaabcc3678a76a4ea85d9df706a7056
-      internalID: 963395523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bienen attack rechts_2
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 197
-        width: 813
-        height: 502
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82272f930a535bc49905a22de5a65a26
-      internalID: -946575101
+      spriteID: e72d429294f144540bfaa6ea32f967dc
+      internalID: 1013450388
       vertices: []
       indices: 
       edges: []
@@ -183,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bienen attack rechts_0: -1482352185
-      bienen attack rechts_1: 963395523
-      bienen attack rechts_2: -946575101
+      Goliath walk seite_0: -2109965645
+      Goliath walk seite_1: 1013450388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
