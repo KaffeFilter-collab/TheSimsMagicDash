@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Meleehit: MonoBehaviour
@@ -7,7 +8,9 @@ public class Meleehit: MonoBehaviour
     {
         left,right,up,down
     }
+    [SerializeField] int damage;
 
+    public IEnemyinterface Ienemyinterface;
     public Attackdirection attackdirection;
     Vector2 AttackOffset;
     public Vector2 AttackOffsety;
@@ -42,8 +45,10 @@ public class Meleehit: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Enemy")) {
-            
+        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Enemy")) 
+        {
+            Ienemyinterface=collision.gameObject.GetComponent<IEnemyinterface>();
+            Ienemyinterface.gothit(damage);
         }
     }
 

@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class magicboltspell : MonoBehaviour
 {
+    public IEnemyinterface Ienemyinterface;
     private Vector3 mouseposition;
-    public Rigidbody2D rigidbody2D;
+    public new Rigidbody2D rigidbody2D;
 
     void Start()
     {
@@ -15,5 +16,14 @@ public class magicboltspell : MonoBehaviour
         Vector3 rotation = transform.position-mouseposition;
         rigidbody2D.velocity= new Vector2(direction.x,direction.y).normalized*2;
         
+    }
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Enemy")) 
+        {
+            
+            Ienemyinterface=collision.gameObject.GetComponent<IEnemyinterface>();
+            Ienemyinterface.gothit(5);
+        }
     }
 }
