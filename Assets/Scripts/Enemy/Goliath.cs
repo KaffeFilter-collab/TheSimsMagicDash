@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Goliath : MonoBehaviour,IEnemyinterface
 {
+    [SerializeField] float Aggrorange;
     Vector2 playerposition;
     GameObject player;
     [SerializeField] public float movementSpeed = 3f;
@@ -13,6 +14,7 @@ public class Goliath : MonoBehaviour,IEnemyinterface
     private  BoxCollider2D boxCollider2D;
     private new Rigidbody2D rigidbody2D;
     private GoliathMeleeAttack goliathMeleeAttack;
+    private float distance;
 
     void Awake()
     {
@@ -25,13 +27,16 @@ public class Goliath : MonoBehaviour,IEnemyinterface
 
     void Update()
     {
-        if(canmove==true)
-        {
-        goliath(player.transform.position);        
-        }
-        if(canmove==false)
-        {
-            rigidbody2D.velocity=new Vector2(0,0);
+       if(Vector2.Distance(playerposition,(Vector2)transform.position)<=Aggrorange) 
+       {
+            if (canmove == true)
+            {
+                goliath(player.transform.position);
+            }
+            if (canmove == false)
+            {
+                rigidbody2D.velocity = new Vector2(0, 0);
+            }
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
