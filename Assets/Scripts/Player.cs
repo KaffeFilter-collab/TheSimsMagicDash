@@ -124,6 +124,7 @@ public class Player : MonoBehaviour
 
     void Meleeattack(InputAction.CallbackContext ctx)
     {
+        animator.StopPlayback();
        if (input.x >= 0.1)
         {
             spriteRenderer.sprite=attack_right;
@@ -286,6 +287,7 @@ public class Player : MonoBehaviour
                 break;
             }
             yield return new WaitForSeconds(0.5f);
+        animator.StartPlayback();
             
         }
 

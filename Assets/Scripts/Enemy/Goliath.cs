@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Windows;
 
 public class Goliath : MonoBehaviour,IEnemyinterface
 {
@@ -15,9 +17,10 @@ public class Goliath : MonoBehaviour,IEnemyinterface
     private new Rigidbody2D rigidbody2D;
     private GoliathMeleeAttack goliathMeleeAttack;
     private float distance;
-
+    private Animator animator;
     void Awake()
     {
+        animator = GetComponent<Animator>();
         goliathMeleeAttack = GetComponentInChildren<GoliathMeleeAttack>();
         boxCollider2D=GetComponent<BoxCollider2D>();
         canmove=true;
@@ -27,6 +30,11 @@ public class Goliath : MonoBehaviour,IEnemyinterface
 
     void Update()
     {
+        animator.SetFloat("MoveXgoliath", rigidbody2D.velocity.x);
+        print(rigidbody2D.velocity.x+"x");
+        animator.SetFloat("MoveYgoliath", rigidbody2D.velocity.y);
+        print(rigidbody2D.velocity.y+"y");
+        playerposition = player.transform.position;
        if(Vector2.Distance(playerposition,(Vector2)transform.position)<=Aggrorange) 
        {
             if (canmove == true)
