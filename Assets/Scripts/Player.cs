@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     {
         up,down,left,right
     }
+    public bool ismoving;
     public AttackAnimation attackanimation;
     public SpriteRenderer spriteRenderer;
     public Sprite attack_up;
@@ -215,54 +216,33 @@ public class Player : MonoBehaviour
 
         void Update()
         {
-            if (input.x >= 0.1)
-            {
-                animator.SetBool("gehn hoch", false);
-                animator.SetBool("gehn runter", false);
-                animator.SetBool("gehn rechts", true);
-                animator.SetBool("gehn links", false);
-            }
-            if (input.x <= -0.1)
-            {
-                animator.SetBool("gehn hoch", false);
-                animator.SetBool("gehn runter", false);
-                animator.SetBool("gehn rechts", false);
-                animator.SetBool("gehn links", true);
-            }
-            if (input.y >= 0.1)
-            {
-                animator.SetBool("gehn hoch", false);
-                animator.SetBool("gehn runter", true);
-                animator.SetBool("gehn rechts", false);
-                animator.SetBool("gehn links", false);
-            }
-            if (input.y <= -0.1)
-            {
-                animator.SetBool("gehn hoch", true);
-                animator.SetBool("gehn runter", false);
-                animator.SetBool("gehn rechts", false);
-                animator.SetBool("gehn links", false);
-            }
+        animator.SetFloat("MoveX", input.x);
+        animator.SetFloat("MoveY", input.y);
+           
         }
 
         void FixedUpdate()
+        {
+        if (ismoving = true)
         {
             if (candash == true)
             {
                 if (input.y != 0)
                 {
-                    rigidbody2d.velocity = input * new Vector2(0,1)*speed;
+                    rigidbody2d.velocity = input * new Vector2(0, 1) * speed;
                 }
                 if (input.x != 0)
                 {
-                    rigidbody2d.velocity = input * new Vector2(1,0)*speed;
+                    rigidbody2d.velocity = input * new Vector2(1, 0) * speed;
                 }
-                if(input.y== 0f && input.x== 0f)
+                if (input.y == 0f && input.x == 0f)
                 {
-                    rigidbody2d.velocity=new Vector2(0,0);
+                    rigidbody2d.velocity = new Vector2(0, 0);
                 }
 
             }
+        }
+       
         }
 
 
