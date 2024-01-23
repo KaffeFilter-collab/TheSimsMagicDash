@@ -99,6 +99,10 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        if (collision.gameObject.CompareTag("Wall")) 
+        {
+            input = Vector2.zero;
+        }
     }
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Wall")) {
@@ -161,7 +165,6 @@ public class Player : MonoBehaviour
     void StopMovement(InputAction.CallbackContext ctx)
     {
         input = Vector2.zero;
-
     }
 
     void SetInput(InputAction.CallbackContext ctx)
