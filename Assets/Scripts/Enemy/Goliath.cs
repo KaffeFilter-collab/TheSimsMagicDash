@@ -31,9 +31,7 @@ public class Goliath : MonoBehaviour,IEnemyinterface
     void Update()
     {
         animator.SetFloat("MoveXgoliath", rigidbody2D.velocity.x);
-        print(rigidbody2D.velocity.x+"x");
         animator.SetFloat("MoveYgoliath", rigidbody2D.velocity.y);
-        print(rigidbody2D.velocity.y+"y");
         playerposition = player.transform.position;
        if(Vector2.Distance(playerposition,(Vector2)transform.position)<=Aggrorange) 
        {
