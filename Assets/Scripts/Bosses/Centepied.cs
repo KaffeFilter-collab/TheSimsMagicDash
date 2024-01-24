@@ -8,4 +8,16 @@ public class Centepied : MonoBehaviour
 {
     [SerializeField]int health;
     [SerializeField]int attackBeforeBreak;
+    private bool attackstart;
+
+    void BossStart()
+    {
+        StartCoroutine(AttackIndicator());
+    }
+
+    IEnumerator AttackIndicator()
+    {
+        yield return new WaitForSeconds(1f);
+        attackstart=false;
+    }
 }
