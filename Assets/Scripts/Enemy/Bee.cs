@@ -17,12 +17,12 @@ public class NewBehaviourScript : MonoBehaviour
     public bool canmove;
     private  BoxCollider2D boxCollider2D;
     private new Rigidbody2D rigidbody2D;
-
+    private Animator animator;
     private bool isExploding;
     
     void Awake()
     {
-
+        animator = GetComponent<Animator>();
         boxCollider2D=GetComponent<BoxCollider2D>();
         canmove=true;
         player = GameObject.FindWithTag("Player");
@@ -33,6 +33,8 @@ public class NewBehaviourScript : MonoBehaviour
     
     void Update()
     {
+        animator.SetFloat("MoveXBee", rigidbody2D.velocity.x);
+        animator.SetFloat("MoveYBee", rigidbody2D.velocity.y);
         Bee(player.transform.position);        
     }
     
