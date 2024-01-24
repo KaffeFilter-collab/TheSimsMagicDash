@@ -65,6 +65,9 @@ public class Goliath : MonoBehaviour,IEnemyinterface
         {
             goliathMeleeAttack.attackdirection = GoliathMeleeAttack.Attackdirection.down;
         }
+        animator.SetFloat("MoveXgoliath", playerposition.x);
+        animator.SetFloat("MoveYgoliath", playerposition.y);
+            animator.SetBool("isAttacking",true);
             goliathMeleeAttack.Attack();
             canmove=false;
             StartCoroutine(Meleewait());
@@ -98,7 +101,9 @@ public class Goliath : MonoBehaviour,IEnemyinterface
     }
     IEnumerator Meleewait()
     {
+
         yield return new WaitForSeconds(1);
+            animator.SetBool("isAttacking",false);
         canmove=true;
     }
     IEnumerator Death()
