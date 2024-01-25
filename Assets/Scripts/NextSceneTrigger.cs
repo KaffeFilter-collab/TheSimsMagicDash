@@ -13,6 +13,7 @@ public class NextSceneTrigger : MonoBehaviour
         {
             //In welche Scene soll er laden?
             SceneManager.LoadScene(0);
+            //Distance(playerpos, enemypos, 3)
         }
     }
 }
