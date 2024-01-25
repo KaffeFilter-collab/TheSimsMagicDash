@@ -11,6 +11,7 @@ TagManager:
   - SpellSlot2
   - PlayerMelee
   - SpellProjektile
+  - Tree
   layers:
   - Default
   - TransparentFX

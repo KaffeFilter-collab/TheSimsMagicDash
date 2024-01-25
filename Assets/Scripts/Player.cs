@@ -88,7 +88,10 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            print("I just hit a tree!");
+        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             if (Invinicibilityframes == false) {
