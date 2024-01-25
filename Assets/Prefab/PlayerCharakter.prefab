@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wait: 0.08
+  ismoving: 0
+  attackanimation: 0
   spriteRenderer: {fileID: 0}
   attack_up: {fileID: 21300000, guid: 68fe78b14e6419d4dbdf1df1d2493b49, type: 3}
   attack_down: {fileID: 21300000, guid: f49daf12ad9462f4a98cd23e6a4af7b2, type: 3}
@@ -147,7 +149,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-913968327550261906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -418,5 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067b1e493422be041acdd965a2fb8522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 3
   attackdirection: 0
   AttackOffsety: {x: 0, y: 0}

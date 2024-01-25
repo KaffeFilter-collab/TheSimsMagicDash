@@ -13,11 +13,18 @@ public class Centepied : MonoBehaviour
     void BossStart()
     {
         StartCoroutine(AttackIndicator());
+        if(attackstart==false)
+        {
+            attackstart=true;
+
+            
+        }
     }
 
     IEnumerator AttackIndicator()
     {
         yield return new WaitForSeconds(1f);
         attackstart=false;
+
     }
 }
