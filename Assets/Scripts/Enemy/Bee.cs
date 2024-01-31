@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
-public class NewBehaviourScript : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour,IEnemyinterface
 {
-    //Sprites
-    SpriteRenderer spriteRenderer;
-    public Sprite exsplosion;
     //OBJ refrences
     GameObject player;
     
@@ -18,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     private  BoxCollider2D boxCollider2D;
     private new Rigidbody2D rigidbody2D;
     private Animator animator;
-    private bool isExploding;
+    
     
     void Awake()
     {
@@ -27,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
         canmove=true;
         player = GameObject.FindWithTag("Player");
         rigidbody2D=GetComponent<Rigidbody2D>();
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        
     }
 
     
@@ -40,7 +38,6 @@ public class NewBehaviourScript : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        canmove=false;
         if(collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Exsplosion());
@@ -64,16 +61,31 @@ public class NewBehaviourScript : MonoBehaviour
         rigidbody2D.velocity=new Vector2(0,0);
         }
     }
+    public void gothit(int damage)
+    {
+            HP=HP-damage;
+            print(HP);
+            if(HP<=0)
+            {
+               StartCoroutine(Death());
+            }
+    }
+    IEnumerator Death()
+    {
+        yield return null;
+        Destroy(gameObject);
+    
+    }
     IEnumerator Exsplosion()
         {
             
             canmove=false;
-            spriteRenderer.sprite = exsplosion; 
-            gameObject.transform.localScale =new Vector3(2,2,0);
-            boxCollider2D.size = new Vector3(2.3f,2.3f,0);
-            yield return new WaitForSeconds(0.5f); 
-            isExploding=true;
-            yield return new WaitForSeconds(0.5f); 
+            animator.SetBool("isExploding",true);
+            yield return new WaitForSeconds(0.1f);
+            gameObject.transform.localScale =new Vector3(1.01f,1.01f,0);
+            boxCollider2D.size = new Vector3(1.01f,1.01f,0);
+            yield return new WaitForSeconds(1); 
+            
             
 
             

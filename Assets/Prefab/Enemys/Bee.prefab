@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.14610566, y: 0.1482069, z: 0}
-  m_LocalScale: {x: 0.3271515, y: 0.31431413, z: 0.74367}
+  m_LocalScale: {x: 0.10324902, y: 0.10611245, z: 0.74367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exsplosion: {fileID: 21300000, guid: 24c11b3506e2f6d468e658188b2bd661, type: 3}
   movementSpeed: 3
-  HP: 0
+  HP: 5
   canmove: 0
 --- !u!61 &2461811033159633424
 BoxCollider2D:

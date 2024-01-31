@@ -4,7 +4,7 @@ using System.Drawing;
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class Centepied : MonoBehaviour
+public class Centepied : MonoBehaviour,IEnemyinterface
 {
     [SerializeField]int health;
     [SerializeField]int attackBeforeBreak;
@@ -20,7 +20,21 @@ public class Centepied : MonoBehaviour
             
         }
     }
-
+    public void gothit(int damage)
+    {
+            health=health-damage;
+            print(health);
+            if(health<=0)
+            {
+               StartCoroutine(Death());
+            }
+    }
+    IEnumerator Death()
+    {
+        yield return null;
+        Destroy(gameObject);
+    
+    }
     IEnumerator AttackIndicator()
     {
         yield return new WaitForSeconds(1f);
