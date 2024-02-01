@@ -2,8 +2,8 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
+using TMPro;
 public class Player : MonoBehaviour
 {
     [SerializeField] public float wait;
@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     {
         up,down,left,right
     }
-    public bool ismoving;
     public AttackAnimation attackanimation;
     public SpriteRenderer spriteRenderer;
     public Sprite attack_up;
@@ -27,14 +26,13 @@ public class Player : MonoBehaviour
     public InputActionReference dash;
     public InputActionReference spell1;
     public InputActionReference spell2;
-    public InputActionReference meleeattack;
     [HideInInspector] public bool inspell;
     GameObject Spell;
     [SerializeField] public float speed = 0;
     public Vector3 input;
     
     //BasicStats
-
+    [SerializeField] public int MaxHP;
     [SerializeField] public int HP;
     [SerializeField] static int Mana;
     private bool Invinicibilityframes = false;
@@ -45,6 +43,10 @@ public class Player : MonoBehaviour
     
     //Animation
     private Animator animator;
+    [HideInInspector]
+    private GameObject screenUI;
+    [SerializeField]
+
 
     private void OnEnable()
     {
@@ -52,18 +54,15 @@ public class Player : MonoBehaviour
         spell2.action.Enable();
         move.action.Enable();
         dash.action.Enable();
-        meleeattack.action.Enable();
         move.action.performed += SetInput;
         move.action.canceled += StopMovement;
         dash.action.performed += Dash;
         spell1.action.performed += Spell1;
         spell2.action.performed += Spell2;
-        meleeattack.action.performed += Meleeattack;
     }
 
     private void OnDisable()
     {
-        meleeattack.action.canceled -= Meleeattack;
         spell1.action.canceled -= Spell1;
         spell2.action.canceled -= Spell2;
         move.action.canceled -= StopMovement;
@@ -73,8 +72,6 @@ public class Player : MonoBehaviour
         dash.action.Disable();
         spell1.action.Disable();
         spell2.action.Disable();
-        meleeattack.action.Disable();
-
     }
 
     private void Awake()
@@ -84,14 +81,12 @@ public class Player : MonoBehaviour
         Invinicibilityframes = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
+        screenUI = GameObject.FindGameObjectWithTag("screenUI");
+        screenUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Health: " + HP.ToString();
+    }   
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Tree"))
-        {
-            print("I just hit a tree!");
-        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             if (Invinicibilityframes == false) {
@@ -125,34 +120,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Meleeattack(InputAction.CallbackContext ctx)
-    {
-        animator.StopPlayback();
-       if (input.x >= 0.1)
-        {
-            spriteRenderer.sprite=attack_right;
-            print("inif");
-        }
-        if (input.x <= -0.1)
-        {
-            spriteRenderer.sprite=attack_left;
-            print("inif");
-
-        }
-        if (input.y >= 0.1)
-        {
-            spriteRenderer.sprite=attack_up;
-            print("inif");
-
-        }
-        if (input.y <= -0.1)
-        {
-            spriteRenderer.sprite=attack_down;
-            print("inif");
-
-        }
-        meleehit.Attack();
-    }
+    
 
 
     void Dash(InputAction.CallbackContext ctx)
@@ -174,27 +142,10 @@ public class Player : MonoBehaviour
     void SetInput(InputAction.CallbackContext ctx)
     {
         input = ctx.ReadValue<Vector2>();
-        if (input.x >= 0.1)
-        {
-            meleehit.attackdirection = Meleehit.Attackdirection.right;
-        }
-        if (input.x <= -0.1)
-        {
-            meleehit.attackdirection = Meleehit.Attackdirection.left;
-        }
-        if (input.y >= 0.1)
-        {
-            meleehit.attackdirection = Meleehit.Attackdirection.up;
-        }
-        if (input.y <= -0.1)
-        {
-            meleehit.attackdirection = Meleehit.Attackdirection.down;
-        }
 
     }
     void Spell1(InputAction.CallbackContext ctx)
     {
-        //  print("buttonworks");
         if (inspell == true && Spell.transform.parent == null) {
             transform.GetChild(0).DetachChildren();
             Spell.transform.SetParent(transform.GetChild(0));
@@ -230,8 +181,8 @@ public class Player : MonoBehaviour
 
         void FixedUpdate()
         {
-        if (ismoving = true)
-        {
+        
+        
             if (candash == true)
             {
                 if (input.y != 0)
@@ -247,11 +198,27 @@ public class Player : MonoBehaviour
                     rigidbody2d.velocity = new Vector2(0, 0);
                 }
 
-            }
+            
         }
        
         }
 
+        public void TakeDamage(int damage)
+        {
+            if(Invinicibilityframes==false){
+                HP=HP-damage;
+                screenUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Health: " + HP.ToString();
+                if(HP<=0)
+                {
+                    screenUI.transform.GetChild(1).gameObject.SetActive(true);
+                    candash=false;
+                    speed=0;
+                    rigidbody2d.velocity=Vector2.zero;
+                }
+                
+            }
+
+        }
 
         IEnumerator DashRoutine(Vector2 direction)
         {

@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour,IEnemyinterface
     private  BoxCollider2D boxCollider2D;
     private new Rigidbody2D rigidbody2D;
     private Animator animator;
-    
+    private Player playerforhit;
     
     void Awake()
     {
@@ -41,9 +41,13 @@ public class NewBehaviourScript : MonoBehaviour,IEnemyinterface
         if(collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Exsplosion());
+            if(canmove==false)
+            {
+                player = collision.gameObject;
+                playerforhit=player.GetComponent<Player>();
+                playerforhit.TakeDamage(1);
+            }
         }
-
-       
     }
     
     

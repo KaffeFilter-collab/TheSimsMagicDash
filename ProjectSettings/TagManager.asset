@@ -12,6 +12,8 @@ TagManager:
   - PlayerMelee
   - SpellProjektile
   - Tree
+  - screenUI
+  - worldUI
   layers:
   - Default
   - TransparentFX

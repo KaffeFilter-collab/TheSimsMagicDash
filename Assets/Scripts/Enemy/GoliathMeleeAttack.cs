@@ -8,7 +8,7 @@ public class GoliathMeleeAttack : MonoBehaviour
     {
         left,right,up,down
     }
-
+    private Player player;
     public Attackdirection attackdirection;
     Vector2 AttackOffset;
     public Vector2 AttackOffsety;
@@ -16,6 +16,7 @@ public class GoliathMeleeAttack : MonoBehaviour
     private bool canattack;
     private void Awake()
     {
+        player = GetComponent<Player>();
         canattack = true;
         Meleecollider=GetComponent<Collider2D>();
         AttackOffset = transform.localPosition*2.5f;
@@ -43,8 +44,8 @@ public class GoliathMeleeAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Enemy")) {
-            
+        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Player")) {
+            player.TakeDamage(2);
         }
     }
 

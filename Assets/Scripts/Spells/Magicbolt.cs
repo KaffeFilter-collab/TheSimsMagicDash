@@ -11,7 +11,7 @@ public class Magicbolt : MonoBehaviour,ISpellInterface
     Rigidbody2D rigidbody2D;
     public Vector2 mousepositionforspell;
     public magicboltspell spellprefab;
-    
+    private bool Cancast=true;
 
         public void Start()
         {
@@ -20,25 +20,33 @@ public class Magicbolt : MonoBehaviour,ISpellInterface
 
         public void Update()
        {
-        if(transform.parent!=null)transform.localPosition= new Vector3(0,0,0);
+        if(transform.parent!=null)transform.localPosition= new Vector3(0,0,8);
        }
         
         public void SpellCasted()
         {
-            
-            if(Mana >= Manacost){
-            Mana=Mana-Manacost;
-            Instantiate(spellprefab,rigidbody2D.transform);
-            transform.DetachChildren();
+            if(transform.parent!=null)
+            {
+                if(Cancast==true){
+                Instantiate(spellprefab,rigidbody2D.transform);
+                transform.DetachChildren();
+                StartCoroutine(castdelay());
+            }
             }
         }
 
         public void casted()
         {
-            print("casted");
+            
             SpellCasted();
         }
 
+        IEnumerator castdelay()
+        {
+            Cancast=false;
+            yield return new WaitForSeconds(1);
+            Cancast=true;
+        }
 }
    
 

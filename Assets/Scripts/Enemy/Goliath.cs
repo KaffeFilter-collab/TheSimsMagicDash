@@ -19,6 +19,7 @@ public class Goliath : MonoBehaviour,IEnemyinterface
     private GoliathMeleeAttack goliathMeleeAttack;
     private float distance;
     private Animator animator;
+    private Player damagedplayer;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -27,6 +28,8 @@ public class Goliath : MonoBehaviour,IEnemyinterface
         canmove=true;
         player = GameObject.FindWithTag("Player");
         rigidbody2D=GetComponent<Rigidbody2D>();
+        damagedplayer = GetComponent<Player>();
+
     }
 
     void Update()
@@ -43,42 +46,19 @@ public class Goliath : MonoBehaviour,IEnemyinterface
             {
                 goliath(player.transform.position);
             }
-            if (canmove == false)
-            {
-                rigidbody2D.velocity = new Vector2(0, 0);
-            }
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         canmove=false;
-        if(collision.gameObject.CompareTag("Player") && canmove==true){
-        playerposition=player.transform.position;
-        currentposition=gameObject.transform.position;
-        if (playerposition.x-currentposition.x >= 0.1)
-        {
-            goliathMeleeAttack.attackdirection = GoliathMeleeAttack.Attackdirection.right;
-            print(playerposition+"hi");
+         if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Player")) {
+            player = collision.gameObject;
+                damagedplayer=player.GetComponent<Player>();
+                damagedplayer.TakeDamage(1);
         }
-        if (playerposition.x -currentposition.x <= -0.1)
-        {
-            goliathMeleeAttack.attackdirection = GoliathMeleeAttack.Attackdirection.left;
-            print(playerposition+"hi");
-        }
-        if (playerposition.y-currentposition.y >= 0.1)
-        {
-            goliathMeleeAttack.attackdirection = GoliathMeleeAttack.Attackdirection.up;
-            print(playerposition+"hi");
-        }
-        if (playerposition.y-currentposition.y <= -0.1)
-        {
-            goliathMeleeAttack.attackdirection = GoliathMeleeAttack.Attackdirection.down;
-            print(playerposition+"hi");
-        }
-        
-            goliathMeleeAttack.Attack();
+    
             StartCoroutine(Meleewait());
-        }
+        
 
     }
 
@@ -107,12 +87,8 @@ public class Goliath : MonoBehaviour,IEnemyinterface
     }
     IEnumerator Meleewait()
     {
-        animator.SetBool("isAttacking",true);
-        animator.SetFloat("MoveXgoliath", playerposition.x-currentposition.x);
-        animator.SetFloat("MoveYgoliath", playerposition.y-currentposition.y);
         yield return new WaitForSeconds(1);
         canmove=true;
-        animator.SetBool("isAttacking",false);
     }
     IEnumerator Death()
     {
