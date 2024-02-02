@@ -86,8 +86,7 @@ public class NewBehaviourScript : MonoBehaviour,IEnemyinterface
             canmove=false;
             animator.SetBool("isExploding",true);
             yield return new WaitForSeconds(0.1f);
-            gameObject.transform.localScale =new Vector3(1.01f,1.01f,0);
-            boxCollider2D.size = new Vector3(1.01f,1.01f,0);
+            
             yield return new WaitForSeconds(1); 
             
             
