@@ -227,7 +227,7 @@ public class Player : MonoBehaviour
             while (candash == false) {
                 rigidbody2d.velocity = input * dashspeed;
                 dashspeed = dashspeed * dashingstrenght;
-                print(dashspeed);
+            
                 if (dashspeed <= speed) candash = true;
                 yield return new WaitForSeconds(wait);
 
@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
             rigidbody2d.velocity = new Vector2(0f, 0f);
             Invinicibilityframes = false;
             dashspeed = 10;
-            print(dashspeed);
+            
             yield return null;
         }
 
