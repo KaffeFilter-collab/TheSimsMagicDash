@@ -81,8 +81,12 @@ public class Player : MonoBehaviour
         Invinicibilityframes = false;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
+        if (GameObject.FindGameObjectWithTag("screenUI")) {
         screenUI = GameObject.FindGameObjectWithTag("screenUI");
         screenUI.transform.GetChild(0).GetComponent<TMP_Text>().text = "Health: " + HP.ToString();
+        }
+
     }   
     
     void OnCollisionEnter2D(Collision2D collision)
