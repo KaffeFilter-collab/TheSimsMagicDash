@@ -17,7 +17,8 @@ public class magicboltspell : MonoBehaviour
         mouseposition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector3 direction = mouseposition - transform.position;
         Vector3 rotation = transform.position - mouseposition;
-        rigidbody2D.velocity = new Vector2(direction.x, direction.y).normalized * 2;
+        rigidbody2D.velocity = new Vector2(direction.x, direction.y).normalized * 4;
+        StartCoroutine(Bullettime());
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,4 +39,10 @@ public class magicboltspell : MonoBehaviour
             Destroy(gameObject);
         }
     }}
+
+    IEnumerator Bullettime()
+    {
+        yield return new WaitForSeconds(8);
+        Destroy(gameObject);
+    }
 }

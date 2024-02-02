@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using TMPro;
 public class Centepied : MonoBehaviour,IEnemyinterface
 {
     [SerializeField]int health;
@@ -16,11 +16,18 @@ public class Centepied : MonoBehaviour,IEnemyinterface
     private bool isattacking;
     new Vector3 target;
     new int speed;
+    private Player damagedplayer;
+    GameObject player;
+    private GameObject screenUI;
     void Awake()
     {
         animator = GetComponent<Animator>();
         cases=1;
         speed=0;
+        BossStart();
+        player = GameObject.FindWithTag("Player");
+        damagedplayer = GetComponent<Player>();
+        screenUI = GameObject.FindGameObjectWithTag("screenUI");
     }
      private void Update()
     {
@@ -29,7 +36,7 @@ public class Centepied : MonoBehaviour,IEnemyinterface
     void BossStart()
     {   
     if(cases==1){
-            speed=2;
+            speed=7;
             target=new Vector3(232.44f,18.05f,0);
             transform.position=new Vector3(232.44f,38.55f,0);
             animator.SetFloat("ValiMovex", 0);
@@ -48,7 +55,7 @@ public class Centepied : MonoBehaviour,IEnemyinterface
         if(cases==3)
                     {
             transform.position=new Vector3(232.23f,18.34f,0);
-            target=new Vector3(232.44f,18.05f,0);
+            target=new Vector3(232.44f,38.36f,0);
             animator.SetFloat("ValiMovex", 0);
             animator.SetFloat("ValiMoveY", 1);
             StartCoroutine(wait());
@@ -56,15 +63,30 @@ public class Centepied : MonoBehaviour,IEnemyinterface
         if(cases==4)
                      {
             transform.position=new Vector3(225.2f,18.34f,0);
-            target=new Vector3(232.44f,18.05f,0);
+            target=new Vector3(225.2f,38.36f,0);
             animator.SetFloat("ValiMovex", 0);
             animator.SetFloat("ValiMoveY", 1);
             StartCoroutine(wait());
                      }
+        if(cases>=5){
+            target=new Vector3(232.44f,28.05f,0);
+            transform.position=new Vector3(232.44f,38.55f,0);
+            animator.SetFloat("ValiMovex", 0);
+            animator.SetFloat("ValiMoveY", -1);
+            cases=0;
+            StartCoroutine(wait2());
+        }
     
     }
             
-            
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Player")) {
+            player = collision.gameObject;
+                damagedplayer=player.GetComponent<Player>();
+                damagedplayer.TakeDamage(5);
+        }
+    }
         
     
     public void gothit(int damage)
@@ -72,17 +94,22 @@ public class Centepied : MonoBehaviour,IEnemyinterface
             health=health-damage;
             if(health<=0)
             {
-                StartCoroutine(death());
+                 screenUI.transform.GetChild(2).gameObject.SetActive(true);
+                Destroy(gameObject);
             }
     }
-    IEnumerator death()
-    {
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
-    }
+    
     IEnumerator wait()
     {
         yield return new WaitForSeconds(4);
+        cases++;
+        BossStart();
+    }
+     IEnumerator wait2()
+    {
+        yield return new WaitForSeconds(2);
+        target=new Vector3(232.44f,18.05f,0);
+        yield return new WaitForSeconds(2);
         cases++;
         BossStart();
     }
