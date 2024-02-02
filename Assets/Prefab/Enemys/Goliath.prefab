@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Aggrorange: 20
   movementSpeed: 1
-  HP: 15
+  HP: 10
 --- !u!95 &6211434484613430423
 Animator:
   serializedVersion: 5

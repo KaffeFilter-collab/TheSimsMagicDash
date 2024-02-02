@@ -24,7 +24,6 @@ public class Centepied : MonoBehaviour,IEnemyinterface
         animator = GetComponent<Animator>();
         cases=1;
         speed=0;
-        BossStart();
         player = GameObject.FindWithTag("Player");
         damagedplayer = GetComponent<Player>();
         screenUI = GameObject.FindGameObjectWithTag("screenUI");
@@ -33,7 +32,7 @@ public class Centepied : MonoBehaviour,IEnemyinterface
     {
         transform.position = Vector3.MoveTowards(transform.position,target, Time.deltaTime * speed);
         }
-    void BossStart()
+    public void BossStart()
     {   
     if(cases==1){
             speed=7;
